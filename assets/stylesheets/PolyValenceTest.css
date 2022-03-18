@@ -1,0 +1,166 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/*
+  ========================================
+  Custom styles
+  ========================================
+*/
+
+body {
+  height: 100vh;
+  background: white;
+  color: black;
+  /* font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; */
+  font: 300 14px/18px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  box-sizing:border-box;
+}
+
+/*
+  ========================================
+  Table
+  ========================================
+*/
+ table{
+
+  border-spacing: 0px;
+
+  display:inline-block;
+}
+
+th{
+  width: 24px;
+  line-height: 24px;
+  writing-mode: vertical-lr;
+    text-align: left;
+    transform: rotateZ(180deg);
+      padding-top: 10px;
+      padding-right:auto;
+  border-top: 2px solid black;
+}
+
+tr{
+  text-align: right;
+} 
+
+.row-header{
+  font-weight: 1000;
+  padding-right: 8px;
+  min-width: 150px;
+}
+
+/*  cross-selection on hover
+    ----------------------------------------
+*/
+table {
+  overflow: hidden;
+  display:inline-block;
+}
+td, th {
+    position: relative;
+    margin:auto;
+}
+td{
+  border-bottom: 1px solid #eee;
+}
+/* row selection */
+td:hover::before { 
+    background-color: #eee;
+    content: '';  
+    height: 100%;
+    left: -5000px;
+    position: absolute;  
+    top: 0;
+    width: 10000px;   
+    z-index: -2;
+    transition-duration: 0.3s;
+      
+}
+/* column selection */
+td:hover:not(.row-header)::after,
+th:hover:not(.row-header)::after { 
+    background-color: #eee;
+    content: '';  
+    height: 10000px;    
+    left: 0;
+    position: absolute;  
+    top: -5000px;
+    width: 100%;
+    z-index: -1;  
+    
+}
+
+/*  status circles
+    ----------------------------------------
+*/
+.status-A,
+.status-B,
+.status-C{
+  height: 18px;
+  width: 18px;
+  margin:3px;
+  border-radius: 50%;
+  border: 1px solid;
+  font-size: 10px;
+  font-weight: 1000;
+  color: black;
+  text-align: center;
+}
+.status-A{
+  border-color: green;
+  background-color: lightgreen;
+}
+.status-B{
+  border-color: orange;
+  background-color: yellow;
+}
+.status-C{
+  border-color: blue;
+  background-color: lightblue;
+}
+/*
+  ========================================
+  ========================================
+*/
